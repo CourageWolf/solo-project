@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/CourageWolf/solo-project/issues"
   },
-  "homepage": "https://github.com/CourageWolf/solo-project#readme"
+  "homepage": "https://github.com/CourageWolf/solo-project#readme",
+  "devDependencies": {
+    "webpack": "^5.10.3",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
 }
