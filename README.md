@@ -20,3 +20,4 @@ Solo Project Brief
 
 6. What are the stretch goals?
     - Being able to list prices in terms of credit card rewards points
+
