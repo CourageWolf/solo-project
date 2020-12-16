@@ -6,7 +6,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js'
   },
-  mode: 'production',
+  mode: 'development',
   module: {
     rules: [
       {
@@ -18,7 +18,15 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
+      },
+      {
+        test: /.(css|scss)$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader']
       }
     ]
+  },
+  devServer: {
+    publicPath: '/build/',
   }
 };
