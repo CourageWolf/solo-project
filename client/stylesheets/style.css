@@ -1,12 +1,23 @@
 body {
   background-color: aliceblue;
+  background-image: url("https://bit.ly/3amQGSQ");
+  background-size: cover;
 }
 
 #flights {
-  background-color: rgb(175, 175, 230);
   width: auto;
   max-width: 500px;
   margin: auto;
+  border: 1px solid #2b0a69;
+  background-color: rgb(175, 175, 230);
+  opacity: 0.8;
+}
+#text {
+  margin: auto;
+  padding: 5%;
+}
+
+.flight {
   border: 1px solid #2b0a69;
 }
 
@@ -17,9 +28,16 @@ form {
   max-width: 500px;
   margin: auto;
   border: 1px solid #2b0a69;
+  border-radius: 25px;
 }
 
 h1 {
   margin: auto;
   text-align: center;
+}
+
+button {
+  border-radius: 25px;
+  width: 200px;
+  margin: auto;
 }

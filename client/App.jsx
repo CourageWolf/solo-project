@@ -35,11 +35,11 @@ class App extends Component {
   }
 
   render() {
-
-    // const flights = [];
-    // for (let i = 0; i < this.state.flights.length; i++) {
-    //   flights.push(<Flight key={i} text={this.state.flights[i]}/>);
-    // }
+    const flights = [];
+    const keys = Object.keys(this.state.flights);
+    for (let i = 0; i < keys.length; i++) {
+      flights.push(<Flight key={i} price={keys[i]} carrier={this.state.flights[keys[i]]}/>);
+    }
 
     return (
       <div>
@@ -56,9 +56,9 @@ class App extends Component {
           <button>Search</button>
         </form>
 
-        {/* <div id='flights'>
+        <div id='flights'>
           {flights}
-        </div> */}
+        </div>
 
       </div>
     );
