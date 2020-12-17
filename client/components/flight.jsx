@@ -8,6 +8,8 @@ class Flight extends Component {
 
   render() {
 
+    // console.log(this.props.flight);
+
     return (
       <div>
         <p>{this.props.text}</p>

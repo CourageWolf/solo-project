@@ -25,16 +25,18 @@ class App extends Component {
     fetch('/api/query/' + from + to + date)
     .then(response => response.json())
     .then(quote => {
-      this.state.flights.push(quote);
-      return console.log(this.state.flights);
+      const newFlights = this.state.flights;
+      newFlights.push(quote);
+      this.setState({flights: newFlights});
+      return console.log(this.state.flights[0]['MinPrice']);
     });
   }
 
   render() {
 
     const flights = [];
-    for (let i = 0; i < 3; i++) {
-      flights.push(<Flight key={i} text={i}/>);
+    for (let i = 0; i < this.state.flights.length; i++) {
+      flights.push(<Flight key={i} text={this.state.flights[i]['MinPrice']}/>);
     }
 
     return (
