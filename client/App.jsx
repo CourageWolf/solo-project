@@ -9,7 +9,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // uncomment the below for proxy challenge
     fetch('/api')
       .then(response => response.json())
       .then(quote => console.log(quote));
@@ -20,6 +19,10 @@ class App extends Component {
     console.log(e.target[0].value);
     console.log(e.target[1].value);
     console.log(e.target[2].value);
+    const val = e.target[0].value;
+    fetch('/api/query/' + val)
+    .then(response => response.json())
+    .then(quote => console.log(quote));
   }
 
   render() {
