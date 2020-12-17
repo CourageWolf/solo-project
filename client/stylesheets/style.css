@@ -1,3 +1,10 @@
 body {
   background-color: aliceblue;
 }
+
+#flights {
+  background-color: rgb(175, 175, 230);
+  width: 500px;
+  margin: auto;
+  border: 3px solid #2b0a69;
+}

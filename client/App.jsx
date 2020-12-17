@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
+import Flight from './components/flight.jsx'
 
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      flights: [],
+    };
   }
 
   componentDidMount() {
@@ -20,10 +24,18 @@ class App extends Component {
 
     fetch('/api/query/' + from + to + date)
     .then(response => response.json())
-    .then(quote => console.log(quote));
+    .then(quote => {
+      this.state.flights.push(quote);
+      return console.log(this.state.flights);
+    });
   }
 
   render() {
+
+    const flights = [];
+    for (let i = 0; i < 3; i++) {
+      flights.push(<Flight key={i} text={i}/>);
+    }
 
     return (
       <div>
@@ -39,8 +51,12 @@ class App extends Component {
 
           <button>Search</button>
         </form>
-      </div>
 
+        <div id='flights'>
+          {flights}
+        </div>
+
+      </div>
     );
   }
 }
