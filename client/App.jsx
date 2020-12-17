@@ -9,18 +9,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/api')
-      .then(response => response.json())
-      .then(quote => console.log(quote));
+
   }
 
   handleClick(e) {
     e.preventDefault();
-    console.log(e.target[0].value);
-    console.log(e.target[1].value);
-    console.log(e.target[2].value);
-    const val = e.target[0].value;
-    fetch('/api/query/' + val)
+    const from = e.target[0].value;
+    const to = '-' + e.target[1].value;
+    const date = '/' + e.target[2].value;
+
+    fetch('/api/query/' + from + to + date)
     .then(response => response.json())
     .then(quote => console.log(quote));
   }

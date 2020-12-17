@@ -9,7 +9,7 @@ router.get('/', flightsController.getQuotes, (req, res) => {
   }
 );
 
-router.get('/query/:val', flightsController.getQuotesQuery, (req, res) => {
+router.get('/query/:from-:to/:date', flightsController.getQuotesQuery, (req, res) => {
   return res.status(200).json(res.locals.quote);
   }
 );

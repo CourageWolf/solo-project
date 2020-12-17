@@ -26,9 +26,13 @@ flightsController.getQuotes = (req, res, next) => {
 
 flightsController.getQuotesQuery = (req, res, next) => {
   
-  console.log(req.params["val"]);
-  // var request = unirest("GET", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/LAX-sky/JFK-sky/2020-12-24");
-  var request = unirest("GET", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/LAX-sky/JFK-sky/2020-12-25");
+  const baseuri = 'https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/';
+  const from = req.params["from"] + '-sky/';
+  const to = req.params["to"] + '-sky/';
+  const date = req.params["date"];
+  const uri = baseuri + from + to + date;
+
+  var request = unirest("GET", uri);
 
   request.headers({
     "x-rapidapi-key": "9414fa9003mshcb07fe5550c2c42p18a582jsn00af9b1af6e5",
