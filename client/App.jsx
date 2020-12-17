@@ -41,7 +41,7 @@ class App extends Component {
 
     return (
       <div>
-        <form onSubmit={this.handleClick}>
+        <form id="form" onSubmit={this.handleClick}>
           <label>From</label>
           <input name="from" />
 

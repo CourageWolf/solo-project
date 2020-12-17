@@ -4,7 +4,22 @@ body {
 
 #flights {
   background-color: rgb(175, 175, 230);
-  width: 500px;
+  width: auto;
+  max-width: 500px;
   margin: auto;
-  border: 3px solid #2b0a69;
+  border: 1px solid #2b0a69;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  max-width: 500px;
+  margin: auto;
+  border: 1px solid #2b0a69;
+}
+
+h1 {
+  margin: auto;
+  text-align: center;
 }
