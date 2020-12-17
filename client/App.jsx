@@ -8,7 +8,8 @@ class App extends Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      flights: [],
+      // flights: [],
+      flights: {},
     };
   }
 
@@ -24,20 +25,21 @@ class App extends Component {
 
     fetch('/api/query/' + from + to + date)
     .then(response => response.json())
-    .then(quote => {
-      const newFlights = this.state.flights;
-      newFlights.push(quote);
+    .then(quotes => {
+      // const newFlights = this.state.flights;
+      // newFlights.push(...quotes);
+      const newFlights = quotes;
       this.setState({flights: newFlights});
-      return console.log(this.state.flights[0]['MinPrice']);
+      return console.log(this.state.flights);
     });
   }
 
   render() {
 
-    const flights = [];
-    for (let i = 0; i < this.state.flights.length; i++) {
-      flights.push(<Flight key={i} text={this.state.flights[i]['MinPrice']}/>);
-    }
+    // const flights = [];
+    // for (let i = 0; i < this.state.flights.length; i++) {
+    //   flights.push(<Flight key={i} text={this.state.flights[i]}/>);
+    // }
 
     return (
       <div>
@@ -54,9 +56,9 @@ class App extends Component {
           <button>Search</button>
         </form>
 
-        <div id='flights'>
+        {/* <div id='flights'>
           {flights}
-        </div>
+        </div> */}
 
       </div>
     );

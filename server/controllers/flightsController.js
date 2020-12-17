@@ -44,7 +44,40 @@ flightsController.getQuotesQuery = (req, res, next) => {
   request.end(function (response) {
     if (response.error) throw new Error(response.error);
 
-    res.locals.quote = response.body.Quotes[0];
+    const carriers = response.body.Carriers;
+    const quotes = response.body.Quotes;
+    const obj = {};
+    
+    for (let i = 0; i < quotes.length; i++) {
+      const price = quotes[i]['MinPrice'];
+      const carrierID = quotes[i]['OutboundLeg']['CarrierIds'][0];
+      let name = '';
+
+      for (let j = 0; j < carriers.length; j++) {
+        if (carrierID === carriers[i]['CarrierId']) {
+          name = carriers[i]['Name'];
+        }
+      }
+
+      obj[price] = name;
+    }
+
+    // for (const quote in quotes) {
+    //   const price = quote['MinPrice'];
+    //   const carrierID = quote['OutboundLeg']['CarrierIds'][0];
+    //   let name = '';
+
+    //   for (const carrier in carriers) {
+    //     if (carrierId === carriers['CarrierId']) {
+    //       name = carrier['Name'];
+    //     }
+    //   }
+
+    //   obj[price] = name;
+    // }
+
+    res.locals.quotes = response.body.Quotes;
+    res.locals.obj = obj;
 
     return next();
   });
