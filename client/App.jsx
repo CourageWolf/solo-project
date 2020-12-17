@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       // flights: [],
       flights: {},
+      points: 0,
     };
   }
 
@@ -22,6 +23,7 @@ class App extends Component {
     const from = e.target[0].value;
     const to = '-' + e.target[1].value;
     const date = '/' + e.target[2].value;
+    const points = e.target[3].value;
 
     fetch('/api/query/' + from + to + date)
     .then(response => response.json())
@@ -29,8 +31,8 @@ class App extends Component {
       // const newFlights = this.state.flights;
       // newFlights.push(...quotes);
       const newFlights = quotes;
-      this.setState({flights: newFlights});
-      return console.log(this.state.flights);
+      this.setState({flights: newFlights, points: points});
+      return console.log([this.state.flights, this.state.points]);
     });
   }
 
@@ -38,7 +40,7 @@ class App extends Component {
     const flights = [];
     const keys = Object.keys(this.state.flights);
     for (let i = 0; i < keys.length; i++) {
-      flights.push(<Flight key={i} price={keys[i]} carrier={this.state.flights[keys[i]]}/>);
+      flights.push(<Flight key={i} price={keys[i]} carrier={this.state.flights[keys[i]]} points={this.state.points}/>);
     }
 
     return (
@@ -52,6 +54,9 @@ class App extends Component {
 
           <label>Date</label>
           <input name="date" />
+
+          <label>Points</label>
+          <input name='points' />
 
           <button>Search</button>
         </form>

@@ -8,8 +8,17 @@ class Flight extends Component {
 
   render() {
 
+    let className = '';
+    const points = this.props.points;
+
+    if (points > 100) {
+      className = 'flight-green';
+    } else {
+      className = 'flight';
+    }
+
     return (
-      <div className='flight'>
+      <div className={className}>
         <p id='text'>{this.props.carrier}       ${this.props.price}</p>
       </div>
     );

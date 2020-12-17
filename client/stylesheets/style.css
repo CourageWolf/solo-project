@@ -2,6 +2,7 @@ body {
   background-color: aliceblue;
   background-image: url("https://bit.ly/3amQGSQ");
   background-size: cover;
+  color: white;
 }
 
 #flights {
@@ -10,8 +11,9 @@ body {
   margin: auto;
   border: 1px solid #2b0a69;
   background-color: rgb(175, 175, 230);
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
+
 #text {
   margin: auto;
   padding: 5%;
@@ -19,11 +21,19 @@ body {
 
 .flight {
   border: 1px solid #2b0a69;
+  box-shadow: 1px 2px 5px 1px #888888;
+}
+
+.flight-green {
+  border: 1px solid #2b0a69;
+  box-shadow: 1px 2px 5px 1px #888888;
+  background-color: rgb(68, 221, 127);
 }
 
 form {
   display: flex;
   flex-direction: column;
+  padding: 2%;
   width: auto;
   max-width: 500px;
   margin: auto;
@@ -34,10 +44,12 @@ form {
 h1 {
   margin: auto;
   text-align: center;
+  color: white;
 }
 
 button {
-  border-radius: 25px;
+  border: 1px solid #ccb1ff;
+  border-radius: 10px;
   width: 200px;
   margin: auto;
 }
