@@ -20,7 +20,14 @@ class Flight extends Component {
 
     return (
       <div className={className}>
-        <p id='text'>{this.props.carrier}       ${this.props.price}</p>
+        {/* <div style={{overflow: 'hidden'}}>
+            <p style={{float: 'left'}}>content1</p>
+            <p style={{float: 'right'}}>content2</p>
+        </div>
+        <p id='text'><i className="large material-icons">flight</i><b>{this.props.carrier}</b> ${this.props.price}</p> */}
+        <p><i className="large material-icons">flight</i></p>
+        <p><b>{this.props.carrier}</b></p>
+        <p>${this.props.price}</p>
       </div>
     );
   }

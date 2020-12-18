@@ -15,18 +15,31 @@ body {
 }
 
 #text {
+  display: flex;
+  align-items: center;
   margin: auto;
   padding: 5%;
 }
 
 .flight {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-around;
+  align-items: center;
   border: 1px solid #2b0a69;
   box-shadow: 1px 2px 5px 1px #888888;
 }
 
 .flight-green {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-around;
+  align-items: center;
   border: 1px solid #2b0a69;
   box-shadow: 1px 2px 5px 1px #888888;
+
+  /* border: 1px solid #2b0a69;
+  box-shadow: 1px 2px 5px 1px #888888; */
   background-color: rgb(68, 221, 127);
 }
 
