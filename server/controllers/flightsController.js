@@ -4,7 +4,6 @@ const flightsController = {};
 
 flightsController.getQuotes = (req, res, next) => {
   
-  // var request = unirest("GET", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/LAX-sky/JFK-sky/2020-12-24");
   var request = unirest("GET", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/LAX-sky/JFK-sky/2020-12-25");
 
   request.headers({
@@ -61,20 +60,6 @@ flightsController.getQuotesQuery = (req, res, next) => {
 
       obj[price] = name;
     }
-
-    // for (const quote in quotes) {
-    //   const price = quote['MinPrice'];
-    //   const carrierID = quote['OutboundLeg']['CarrierIds'][0];
-    //   let name = '';
-
-    //   for (const carrier in carriers) {
-    //     if (carrierId === carriers['CarrierId']) {
-    //       name = carrier['Name'];
-    //     }
-    //   }
-
-    //   obj[price] = name;
-    // }
 
     res.locals.quotes = response.body.Quotes;
     res.locals.obj = obj;

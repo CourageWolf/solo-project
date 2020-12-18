@@ -10,8 +10,9 @@ class Flight extends Component {
 
     let className = '';
     const points = this.props.points;
+    const pointsPrice = (this.props.price / 1.4) * 100;
 
-    if (points > 100) {
+    if (points >= pointsPrice) {
       className = 'flight-green';
     } else {
       className = 'flight';
