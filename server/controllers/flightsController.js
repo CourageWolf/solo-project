@@ -51,10 +51,10 @@ flightsController.getQuotesQuery = (req, res, next) => {
       const price = quotes[i]['MinPrice'];
       const carrierID = quotes[i]['OutboundLeg']['CarrierIds'][0];
       let name = '';
-
+      
       for (let j = 0; j < carriers.length; j++) {
-        if (carrierID === carriers[i]['CarrierId']) {
-          name = carriers[i]['Name'];
+        if (carrierID === carriers[j]['CarrierId']) {
+          name = carriers[j]['Name'];
         }
       }
 
