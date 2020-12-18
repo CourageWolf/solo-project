@@ -24,10 +24,19 @@ body {
 .flight {
   display: flex;
   overflow: hidden;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin:auto;
   align-items: center;
   border: 1px solid #2b0a69;
   box-shadow: 1px 2px 5px 1px #888888;
+}
+
+.flight:hover {
+  border: 2px solid #ffffff;
+}
+
+.flight-green:hover {
+  border: 2px solid #ffffff;
 }
 
 .flight-green {
@@ -37,9 +46,6 @@ body {
   align-items: center;
   border: 1px solid #2b0a69;
   box-shadow: 1px 2px 5px 1px #888888;
-
-  /* border: 1px solid #2b0a69;
-  box-shadow: 1px 2px 5px 1px #888888; */
   background-color: rgb(68, 221, 127);
 }
 
